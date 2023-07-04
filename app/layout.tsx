@@ -1,6 +1,9 @@
 import Providers from "@/components/providers";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import SignInButton from "@/components/signin-button";
+import MainNav from "@/components/main-nav";
+import { dashboardConfig } from "@/config/dashboard";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

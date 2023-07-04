@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Codesandbox, Hammer, Key } from "lucide-react";
 import SignIn from "@/components/user-signin";
+import { useSession } from "next-auth/react";
 
 export default function RegisterPage() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 w-screen h-screen items-center">
       <div className="hidden md:flex h-full bg-slate-950 items-center justify-center">
-        <Codesandbox className="text-white animate-spin hover:scale-110" />
+        <Codesandbox className={`text-white animate-spin hover:scale-110`} />
       </div>
       <div className="flex flex-col items-center justify-center">
         <Link href="/login">

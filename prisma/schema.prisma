@@ -22,7 +22,7 @@ type ItemAdditionalPropertiesReviews {
 model Item {
   id                    String                    @id @default(auto()) @map("_id") @db.ObjectId
   v                     Int                       @map("__v")
-  additional_properties ItemAdditionalProperties
+  additional_properties ItemAdditionalProperties?
   category              String
   createdAt             DateTime                  @db.Date
   description           String

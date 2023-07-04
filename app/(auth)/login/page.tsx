@@ -27,7 +27,7 @@ export default function Login() {
           href="/register"
           className="text-center text-black/60 underline text-sm w-full"
         >
-          You don't have an accout, do you?
+          Don't have an accout? Click here
         </Link>
       </div>
     </div>
