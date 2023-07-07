@@ -13,7 +13,7 @@ export default async function MainLayout({ children }: MainLayoutProps) {
   return (
     <Providers>
       <div>
-        <main>
+        <main className="lg:px-4 xl:px-0 px-6">
           <header className="flex justify-between items-center h-20 py-6 container mx-auto">
             <MainNav items={dashboardConfig.mainNav} />
             <SignInButton />
