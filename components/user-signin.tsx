@@ -18,13 +18,12 @@ export default function SignIn() {
     const result = await signIn("credentials", {
       email: email.current,
       password: password.current,
-      redirect: false,
+      redirect: true,
     });
   };
 
   useEffect(() => {
     if (status === "authenticated") router.push("/");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
   return (

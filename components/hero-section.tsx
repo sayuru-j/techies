@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <div className="grid grid-cols-2 min-h-[50vh] mb-20 container mx-auto">
+    <div className="grid md:grid-cols-2 min-h-[50vh] mb-20 container mx-auto">
       <div className="flex flex-col gap-4 mt-14">
         <div className="border-[2px] w-28 border-slate-900 mb-4" />
         <h1 className="text-[50px] font-bold">

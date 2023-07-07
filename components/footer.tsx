@@ -3,8 +3,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="container mx-auto flex items-center justify-between py-10">
-      <div className="w-3/4 flex items-center gap-4">
+    <div className="container mx-auto flex flex-col md:flex-row gap-4 md:items-start items-center justify-between py-10">
+      <div className="w-3/4 md:flex items-center gap-4 hidden">
         <Heart size={20} />
         <h1 className="text-sm">
           Made with{" "}
@@ -38,7 +38,7 @@ export default function Footer() {
           .
         </h1>
       </div>
-      <div className="w-1/4 flex items-center justify-end gap-2">
+      <div className="w-full md:w-1/4 flex flex-col md:flex-row items-center md:justify-end gap-2">
         <LucideInfinity size={25} />
         <h1 className="text-sm">
           I'm{" "}

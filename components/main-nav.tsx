@@ -19,8 +19,8 @@ export default function MainNav({ items, children }: MainNavProps) {
           TECHIES
         </span>
       </Link>
-      {session?.user.role === "USER" && items?.length ? (
-        <nav className="gap-6 md:flex">
+      {session?.user.role !== "ADMIN" && items?.length ? (
+        <nav className="gap-6 md:flex hidden">
           {items?.map((item, index) => (
             <Link
               key={index}

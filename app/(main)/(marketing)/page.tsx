@@ -8,7 +8,7 @@ export default function Landing() {
   const { data: session, status } = useSession();
 
   return (
-    <div className="">
+    <div>
       <HeroSection />
       <Trending />
       <Services />

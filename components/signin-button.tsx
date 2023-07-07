@@ -30,7 +30,10 @@ export default function SignInButton() {
                   alt="Display Picture"
                 />
               ) : (
-                <User size={18} />
+                <User
+                  size={18}
+                  className="pointer-events-none focus:border-none"
+                />
               )}
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white" align="end">
