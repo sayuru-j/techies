@@ -10,7 +10,7 @@ export default function RegisterPage() {
         <Codesandbox className={`text-white animate-spin hover:scale-110`} />
       </div>
       <div className="flex flex-col items-center justify-center">
-        <Link href="/login">
+        <Link href="/login" passHref>
           <button
             type="button"
             className="absolute top-4 right-4 gap-1 bg-slate-950 hover:bg-slate-950/80 text-white h-9 px-3 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background"

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <div className="flex flex-col w-screen h-screen items-center justify-center">
-      <Link href="/">
+      <Link href="/" passHref>
         <button
           type="button"
           className="absolute top-4 left-4 gap-1 hover:bg-slate-100/80 text-black/80 h-9 px-3 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background"
