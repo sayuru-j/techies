@@ -7,38 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-type ItemAdditionalProperties {
-  rating  Float
-  reviews ItemAdditionalPropertiesReviews[]
-}
-
-type ItemAdditionalPropertiesReviews {
-  id     String @map("_id") @db.ObjectId
-  body   String
-  itemid String
-  uid    String
-}
-
-model Item {
-  id                    String                    @id @default(auto()) @map("_id") @db.ObjectId
-  v                     Int                       @map("__v")
-  additional_properties ItemAdditionalProperties?
-  category              String
-  createdAt             DateTime                  @db.Date
-  description           String
-  image_url             String
-  name                  String
-  price                 Int
-  quantity              Int
-  updatedAt             DateTime                  @db.Date
-}
-
+// Auth section
 model Account {
   id                 String  @id @default(cuid()) @map("_id")
   userId             String
   type               String
   provider           String
-  providerAccountId  String
+  providerAccountId  String?
   refresh_token      String?
   access_token       String?
   expires_at         Int?
@@ -68,7 +43,43 @@ model User {
   email               String?   @unique
   encrypted_password  String?
   emailVerified       DateTime?
+  role                Role    @default(USER)
   image               String?
   Account             Account[]
   Session             Session[]
 }
+
+// Product section
+type ItemAdditionalProperties {
+  rating  Float
+  reviews ItemAdditionalPropertiesReviews[]
+}
+
+type ItemAdditionalPropertiesReviews {
+  id     String @map("_id") @db.ObjectId
+  body   String
+  itemid String
+  uid    String
+}
+
+model Item {
+  id                    String                    @id @default(auto()) @map("_id") @db.ObjectId
+  v                     Int                       @map("__v")
+  additional_properties ItemAdditionalProperties?
+  category              String
+  createdAt             DateTime                  @db.Date
+  description           String
+  image_url             String
+  name                  String
+  price                 Int
+  quantity              Int
+  updatedAt             DateTime                  @db.Date
+}
+
+
+// Predefined values
+enum Role {
+  USER
+  ADMIN
+}
+

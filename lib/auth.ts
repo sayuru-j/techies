@@ -81,7 +81,7 @@ export const authOptions: NextAuthOptions = {
 
         const result = await res.json();
 
-        if (JSON.stringify(result).includes("accessToken")) {
+        if (JSON.stringify(result).includes("access_token")) {
           // Any object returned will be saved in `user` property of the JWT
           return result;
         } else {

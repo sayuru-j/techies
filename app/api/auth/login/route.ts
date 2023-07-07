@@ -1,3 +1,4 @@
+import { CreateAccount } from "@/controllers/account";
 import { signJwtAccessToken } from "@/lib/jwt";
 import prisma from "@/lib/prisma";
 import * as bcrypt from "bcrypt";
@@ -18,11 +19,20 @@ export async function POST(request: Request) {
 
   if (user && (await bcrypt.compare(body.password, user.encrypted_password!))) {
     const { encrypted_password, ...userWithoutPass } = user;
-    // access token creation
-    const accessToken = signJwtAccessToken(userWithoutPass);
+
+    // Access token creation
+    const access_token = signJwtAccessToken(userWithoutPass);
+
+    // Account creation
+    CreateAccount({
+      id: user.id,
+      access_token,
+      emailVerified: user.emailVerified as Date,
+    });
+
     const result = {
       ...userWithoutPass,
-      accessToken,
+      access_token,
     };
 
     return new Response(JSON.stringify(result), {
