@@ -14,21 +14,21 @@ export default function Footer() {
           >
             Next.js
           </a>
-          , Hosted on{" "}
+          ,Hosted on{" "}
           <a
             href="https://vercel.com/dashboard"
             className="font-semibold border-b-[2px] pb-[1px] border-black/50"
           >
             Vercel
           </a>
-          . Illustrations by{" "}
+          .Illustrations by{" "}
           <a
             href="https://app.popsy.co/"
             className="font-semibold border-b-[2px] pb-[1px] border-black/50"
           >
             Popsy
           </a>
-          . Inspired by{" "}
+          .Inspired by{" "}
           <a
             href="https://tx.shadcn.com/"
             className="font-semibold border-b-[2px] pb-[1px] border-black/50"
